@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "645673823863",
+    "project_id": "e-commerce-demo-cf81b",
+    "storage_bucket": "e-commerce-demo-cf81b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645673823863:android:1bd12d835dd3513b816072",
+        "android_client_info": {
+          "package_name": "com.example.dotamarketplace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645673823863-4pgjgmr1v3ila3e8j0tvkg4u92lk6er2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGALxDBeRYtchIWlk733GdEdcS_ssiGFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645673823863-4pgjgmr1v3ila3e8j0tvkg4u92lk6er2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645673823863:android:0c1ac2ed546c98ce816072",
+        "android_client_info": {
+          "package_name": "mdmedia.multivendor.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645673823863-4pgjgmr1v3ila3e8j0tvkg4u92lk6er2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGALxDBeRYtchIWlk733GdEdcS_ssiGFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645673823863-4pgjgmr1v3ila3e8j0tvkg4u92lk6er2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645673823863:android:c9c58671e1dbbbcf816072",
+        "android_client_info": {
+          "package_name": "mdmedia.multivendor.rider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645673823863-4pgjgmr1v3ila3e8j0tvkg4u92lk6er2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGALxDBeRYtchIWlk733GdEdcS_ssiGFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645673823863-4pgjgmr1v3ila3e8j0tvkg4u92lk6er2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645673823863:android:dddc882fa49ac592816072",
+        "android_client_info": {
+          "package_name": "mdmedia.multivendor.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645673823863-4pgjgmr1v3ila3e8j0tvkg4u92lk6er2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGALxDBeRYtchIWlk733GdEdcS_ssiGFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645673823863-4pgjgmr1v3ila3e8j0tvkg4u92lk6er2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

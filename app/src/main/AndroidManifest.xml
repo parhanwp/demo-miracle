@@ -34,6 +34,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCgQRuxX1Mf2epk0XqUisZnRlSZbArjlWk" />
+
         <activity android:name=".LocationActivity"/>
         <activity android:name=".HistoryActivity" />
         <activity android:name=".RegisterActivity" />
@@ -41,7 +42,8 @@
         <activity android:name=".BuyItemActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Splashscreen"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -56,6 +58,13 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

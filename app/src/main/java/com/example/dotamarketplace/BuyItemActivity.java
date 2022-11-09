@@ -5,6 +5,7 @@ import static com.example.dotamarketplace.DatabaseHelper._ID;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -108,6 +109,7 @@ public class BuyItemActivity extends AppCompatActivity {
                     int getPayment = payment_method.getCheckedRadioButtonId();
                     radioButton = findViewById(getPayment);
                     startActivity(intent);
+                    Log.d("log_adam","check");
                     rudderClient.track(
                             "Product_Checkout",
                             new RudderProperty()

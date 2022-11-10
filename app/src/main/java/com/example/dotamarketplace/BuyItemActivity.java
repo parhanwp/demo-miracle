@@ -5,6 +5,7 @@ import static com.example.dotamarketplace.DatabaseHelper._ID;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -37,17 +38,8 @@ public class BuyItemActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final RudderClient rudderClient = RudderClient.getInstance(
-                this,
-                "39dce006-33e4-4678-8054-0765319c0141",
-                new RudderConfig.Builder()
-                        .withDataPlaneUrl("https://backend-cdxp360.digipop.ai/61ff8018-21ba-41d3-9f60-bc3a9d5f79aa/df526042-d013-42e1-b099-c39e19db0a3d")
-                        .withControlPlaneUrl("https://backend-cdxp360.digipop.ai/61ff8018-21ba-41d3-9f60-bc3a9d5f79aa/df526042-d013-42e1-b099-c39e19db0a3d")
-                        .withTrackLifecycleEvents(true)
-                        .withRecordScreenViews(true)
-                        .withLogLevel(RudderLogger.RudderLogLevel.VERBOSE) // for logging, disable in production
-                        .build()
-        );
+//        final RudderClient rudderClient = RudderstackClient.getRudderClient();
+        final RudderClient rudderClient = MyApplication.getInstance().getRudderClient();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_item);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -108,16 +100,16 @@ public class BuyItemActivity extends AppCompatActivity {
                     int getPayment = payment_method.getCheckedRadioButtonId();
                     radioButton = findViewById(getPayment);
                     startActivity(intent);
+                    Log.d("log_adam",price.getText().toString());
                     rudderClient.track(
                             "Product_Checkout",
                             new RudderProperty()
                                     .putValue("name",name.getText().toString())
-                                    .putValue("price",price.getText().toString())
+                                    .putValue("prices",total)
                                     .putValue("quantity",quantity.getText().toString())
                                     .putValue("payment_method",radioButton.getText())
                                     .putValue("stock",stock.getText().toString())
                     );
-
                 }
             }
         });

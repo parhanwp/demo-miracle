@@ -24,17 +24,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final RudderClient rudderClient = RudderClient.getInstance(
-                this,
-                "39dce006-33e4-4678-8054-0765319c0141",
-                new RudderConfig.Builder()
-                        .withDataPlaneUrl("https://backend-cdxp360.digipop.ai/61ff8018-21ba-41d3-9f60-bc3a9d5f79aa/df526042-d013-42e1-b099-c39e19db0a3d")
-                        .withControlPlaneUrl("https://backend-cdxp360.digipop.ai/61ff8018-21ba-41d3-9f60-bc3a9d5f79aa/df526042-d013-42e1-b099-c39e19db0a3d")
-                        .withTrackLifecycleEvents(true)
-                        .withRecordScreenViews(true)
-                        .withLogLevel(RudderLogger.RudderLogLevel.VERBOSE) // for logging, disable in production
-                        .build()
-        );
+        final RudderClient rudderClient = MyApplication.getInstance().getRudderClient();
+        final String fcm_id = MyApplication.getInstance().getFCMtoken();
 
         setContentView(R.layout.activity_login);
         dbManager = new DatabaseManager(this);
@@ -71,7 +62,8 @@ public class LoginActivity extends AppCompatActivity {
                             Intent intent = new Intent(view.getContext(), MainActivity.class);
                             RudderTraits traits = new RudderTraits();
                             traits.putEmail(username.getText().toString());
-                            rudderClient.identify("userId",traits,null);
+                            traits.put("firebaseToken",fcm_id);
+                            rudderClient.identify(username.getText().toString(),traits,null);
                             preference.saveString("username", username.getText().toString());
                             startActivity(intent);
                             finish();

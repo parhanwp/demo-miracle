@@ -1,4 +1,4 @@
-package com.example.dotamarketplace;
+package com.example.miraclemarketplace;
 
 import android.content.Intent;
 import android.os.Bundle;

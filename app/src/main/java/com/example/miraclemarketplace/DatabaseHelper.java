@@ -1,4 +1,4 @@
-package com.example.dotamarketplace;
+package com.example.miraclemarketplace;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,7 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String NAME = "name";
     public static final String USER_ID = "user_id";
     public static final String _ID = "_id";
-    public static final String USERNAME = "username";
+    public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
     public static final String PHONE_NUMBER = "phone_number";
     public static final String GENDER = "gender";
@@ -31,7 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_USER = "create table " + TABLE_USER + " ("
                     + _ID + " integer primary key autoincrement, "
                     + NAME + " text, "
-                    + USERNAME + " text unique, "
+                    + EMAIL + " text unique, "
                     + PASSWORD + " text, "
                     + PHONE_NUMBER + " text, "
                     + GENDER + " text, "

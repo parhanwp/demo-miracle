@@ -1,4 +1,4 @@
-package com.example.dotamarketplace;
+package com.example.miraclemarketplace;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -6,7 +6,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +16,7 @@ import com.rudderstack.android.sdk.core.*;
 public class LoginActivity extends AppCompatActivity {
 
     Button login, register;
-    EditText username, password;
+    EditText email, password;
     private DatabaseManager dbManager;
 
 
@@ -33,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         login = findViewById(R.id.login);
         register = findViewById(R.id.register);
-        username = findViewById(R.id.username);
+        email = findViewById(R.id.email);
         password = findViewById(R.id.password);
 
         final SharedPreference preference = new SharedPreference(this);
@@ -49,26 +48,26 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (username.getText().toString().equals("")) {
+                if (email.getText().toString().equals("")) {
                     Toast.makeText(view.getContext(), "Email tidak boleh kosong", Toast.LENGTH_SHORT).show();
                 } else if (password.getText().toString().equals("")) {
                     Toast.makeText(view.getContext(), "Password tidak boleh kosong", Toast.LENGTH_SHORT).show();
                 } else {
-                    Cursor cursor = dbManager.login(username.getText().toString());
+                    Cursor cursor = dbManager.login(email.getText().toString());
                     if (cursor.getCount() == 0) {
                         Toast.makeText(LoginActivity.this, "Email belum terdaftar", Toast.LENGTH_SHORT).show();
                     } else {
                         if (password.getText().toString().equals(cursor.getString(cursor.getColumnIndex(DatabaseHelper.PASSWORD)))) {
                             Intent intent = new Intent(view.getContext(), MainActivity.class);
                             RudderTraits traits = new RudderTraits();
-                            traits.putEmail(username.getText().toString());
+                            traits.putEmail(email.getText().toString());
                             traits.put("firebaseToken",fcm_id);
-                            rudderClient.identify(username.getText().toString(),traits,null);
-                            preference.saveString("username", username.getText().toString());
+                            rudderClient.identify(email.getText().toString(),traits,null);
+                            preference.saveString("email", email.getText().toString());
                             rudderClient.track(
                                     "login",
                                     new RudderProperty()
-                                            .putValue("email",username.getText().toString())
+                                            .putValue("email",email.getText().toString())
                             );
                             startActivity(intent);
                             finish();

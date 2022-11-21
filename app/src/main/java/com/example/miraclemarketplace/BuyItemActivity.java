@@ -1,6 +1,6 @@
-package com.example.dotamarketplace;
+package com.example.miraclemarketplace;
 
-import static com.example.dotamarketplace.DatabaseHelper._ID;
+import static com.example.miraclemarketplace.DatabaseHelper._ID;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -20,8 +20,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.rudderstack.android.sdk.core.RudderClient;
-import com.rudderstack.android.sdk.core.RudderConfig;
-import com.rudderstack.android.sdk.core.RudderLogger;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -64,7 +62,7 @@ public class BuyItemActivity extends AppCompatActivity {
         name.setText(cursor.getString(cursor.getColumnIndex(DatabaseHelper.NAME)));
         price.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.PRICE))));
 
-        final Cursor user = dbManager.getProfile(preference.getString("username"));
+        final Cursor user = dbManager.getProfile(preference.getString("email"));
 
         final int stok = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.STOCK));
 
@@ -80,7 +78,7 @@ public class BuyItemActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int qty = Integer.parseInt(quantity.getText().toString());
-                int balance = user.getInt(user.getColumnIndex(DatabaseHelper.BALANCE));
+                //int balance = user.getInt(user.getColumnIndex(DatabaseHelper.BALANCE));
                 int total = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.PRICE)) * qty;
                 if (quantity.getText().toString().equals("")){
                     Toast.makeText(view.getContext(), "Quantity tidak boleh kosong", Toast.LENGTH_SHORT).show();

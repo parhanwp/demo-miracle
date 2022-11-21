@@ -1,23 +1,12 @@
-package com.example.dotamarketplace;
+package com.example.miraclemarketplace;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
-import com.rudderstack.android.sdk.core.*;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.rudderstack.android.sdk.core.RudderClient;
-import com.rudderstack.android.sdk.core.RudderConfig;
-import com.rudderstack.android.sdk.core.RudderLogger;
-
-import java.util.ArrayList;
 
 public class HistoryAdapter extends SimpleCursorAdapter {
 

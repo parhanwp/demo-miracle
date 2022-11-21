@@ -1,4 +1,4 @@
-package com.example.dotamarketplace;
+package com.example.miraclemarketplace;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +17,8 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 import com.rudderstack.android.sdk.core.*;
 
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class RegisterActivity extends AppCompatActivity {
-    EditText fullName, username, password, confirm, phone;
+    EditText fullName, email, password, confirm, phone;
     RadioGroup group;
     CheckBox agree;
     Button register;
@@ -37,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         Toolbar toolbar = findViewById(R.id.toolbar);
         fullName = findViewById(R.id.fullname);
-        username = findViewById(R.id.username);
+        email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         confirm = findViewById(R.id.confirm);
         phone = findViewById(R.id.phone);
@@ -65,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         RadioButton button = findViewById(group.getCheckedRadioButtonId());
         if (fullName.getText().toString().equals("")) {
             Toast.makeText(this, "Full Name tidak boleh kosong", Toast.LENGTH_SHORT).show();
-        } else if (username.getText().toString().equals("")) {
+        } else if (email.getText().toString().equals("")) {
             Toast.makeText(this, "Email tidak boleh kosong", Toast.LENGTH_SHORT).show();
         } else if (password.getText().toString().equals("")) {
             Toast.makeText(this, "Password tidak boleh kosong", Toast.LENGTH_SHORT).show();
@@ -77,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Phone", Toast.LENGTH_SHORT).show();
         } else if (fullName.getText().length() < 2) {
             Toast.makeText(this, "Full Name harus lebih dari 2 huruf", Toast.LENGTH_SHORT).show();
-        } else if (username.getText().length() < 5 && username.getText().length() > 25) {
+        } else if (email.getText().length() < 5 && email.getText().length() > 25) {
             Toast.makeText(this, "Email harus lebih dari 5 dan kurang dari 25 huruf", Toast.LENGTH_SHORT).show();
         } else if (!cekHurufBesar(password.getText().toString())){
             Toast.makeText(this, "Password harus mengandung huruf kapital, 1 simbol, 1 angka", Toast.LENGTH_SHORT).show();
@@ -97,19 +93,19 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Tolong pilih gender anda", Toast.LENGTH_SHORT).show();
         } else if (!agree.isChecked()) {
             Toast.makeText(this, "Tolong setujui pernyataan", Toast.LENGTH_SHORT).show();
-        } else if(dbManager.checkUsername(username.getText().toString())) {
+        } else if(dbManager.checkUsername(email.getText().toString())) {
             Toast.makeText(this, "Username telah digunakan", Toast.LENGTH_SHORT).show();
         } else {
-            dbManager.register(fullName.getText().toString(), username.getText().toString(), password.getText().toString(), phone.getText().toString(), button.getText().toString());
+            dbManager.register(fullName.getText().toString(), email.getText().toString(), password.getText().toString(), phone.getText().toString(), button.getText().toString());
             Intent intent = new Intent(this, LoginActivity.class);
             RudderTraits traits = new RudderTraits();
-            traits.putEmail(username.getText().toString());
+            traits.putEmail(email.getText().toString());
             traits.putPhone(phone.getText().toString());
-            rudderClient.identify(username.getText().toString(),traits,null);
+            rudderClient.identify(email.getText().toString(),traits,null);
             rudderClient.track(
                     "register",
                     new RudderProperty()
-                            .putValue("email",username.getText().toString())
+                            .putValue("email",email.getText().toString())
             );
             startActivity(intent);
             finish();

@@ -1,4 +1,4 @@
-package com.example.dotamarketplace;
+package com.example.miraclemarketplace;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.example.dotamarketplace;
+package com.example.miraclemarketplace;
 
 
 
@@ -14,8 +14,6 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import com.rudderstack.android.sdk.core.RudderClient;
 import com.rudderstack.android.sdk.core.*;
-import com.rudderstack.android.sdk.core.RudderConfig;
-import com.rudderstack.android.sdk.core.RudderLogger;
 
 
 public class ItemAdapter extends SimpleCursorAdapter {

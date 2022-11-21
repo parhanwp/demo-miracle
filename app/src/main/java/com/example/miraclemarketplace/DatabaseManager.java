@@ -1,12 +1,10 @@
-package com.example.dotamarketplace;
+package com.example.miraclemarketplace;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-
-import java.util.List;
 
 public class DatabaseManager {
     private DatabaseHelper dbHelper;
@@ -25,10 +23,10 @@ public class DatabaseManager {
 
     public void close() { dbHelper.close(); }
 
-    public void register(String name, String username, String password, String phone, String gender) {
+    public void register(String name, String email, String password, String phone, String gender) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.NAME, name);
-        contentValues.put(DatabaseHelper.USERNAME, username);
+        contentValues.put(DatabaseHelper.EMAIL, email);
         contentValues.put(DatabaseHelper.PASSWORD, password);
         contentValues.put(DatabaseHelper.PHONE_NUMBER, phone);
         contentValues.put(DatabaseHelper.GENDER, gender);
@@ -76,7 +74,7 @@ public class DatabaseManager {
     }
 
     public Cursor getProfile(String username) {
-        String query = "select * from " + DatabaseHelper.TABLE_USER + " WHERE " + DatabaseHelper.USERNAME + " = '" + username + "'";
+        String query = "select * from " + DatabaseHelper.TABLE_USER + " WHERE " + DatabaseHelper.EMAIL + " = '" + username + "'";
         Cursor cursor = database.rawQuery(query, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -107,7 +105,7 @@ public class DatabaseManager {
     }
 
     public Cursor login(String username) {
-        String query = "select * from " + DatabaseHelper.TABLE_USER + " WHERE " + DatabaseHelper.USERNAME + " = '" + username + "'";
+        String query = "select * from " + DatabaseHelper.TABLE_USER + " WHERE " + DatabaseHelper.EMAIL + " = '" + username + "'";
         Cursor cursor = database.rawQuery(query, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -116,7 +114,7 @@ public class DatabaseManager {
     }
 
     public boolean checkUsername(String username) {
-        String query = "select * from " + DatabaseHelper.TABLE_USER + " WHERE " + DatabaseHelper.USERNAME + " = '" + username + "'";
+        String query = "select * from " + DatabaseHelper.TABLE_USER + " WHERE " + DatabaseHelper.EMAIL + " = '" + username + "'";
         Cursor cursor = database.rawQuery(query, null);
         if (cursor != null) {
             cursor.moveToFirst();

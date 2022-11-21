@@ -1,7 +1,6 @@
-package com.example.dotamarketplace;
+package com.example.miraclemarketplace;
 
 import android.app.Application;
-import android.database.Cursor;
 import android.util.Log;
 
 import androidx.annotation.NonNull;

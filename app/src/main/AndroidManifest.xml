@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dotamarketplace">
+    package="com.example.miraclemarketplace">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -16,10 +16,10 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name=".MyApplication"
+        android:name="com.example.miraclemarketplace.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Miracle-Marketplace"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -36,13 +36,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCgQRuxX1Mf2epk0XqUisZnRlSZbArjlWk" />
 
-        <activity android:name=".LocationActivity"/>
-        <activity android:name=".HistoryActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".BuyItemActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".Splashscreen"
+        <activity android:name="com.example.miraclemarketplace.LocationActivity"/>
+        <activity android:name="com.example.miraclemarketplace.HistoryActivity" />
+        <activity android:name="com.example.miraclemarketplace.RegisterActivity" />
+        <activity android:name="com.example.miraclemarketplace.MainActivity" />
+        <activity android:name="com.example.miraclemarketplace.BuyItemActivity" />
+        <activity android:name="com.example.miraclemarketplace.LoginActivity" />
+        <activity android:name="com.example.miraclemarketplace.Splashscreen"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="true">
             <intent-filter>
@@ -52,7 +52,7 @@
         </activity>
 
         <receiver
-            android:name=".SMSReceiver"
+            android:name="com.example.miraclemarketplace.SMSReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="999">

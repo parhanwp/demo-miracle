@@ -32,6 +32,8 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_register);
         Toolbar toolbar = findViewById(R.id.toolbar);
         fullName = findViewById(R.id.fullname);
@@ -103,7 +105,12 @@ public class RegisterActivity extends AppCompatActivity {
             RudderTraits traits = new RudderTraits();
             traits.putEmail(username.getText().toString());
             traits.putPhone(phone.getText().toString());
-            rudderClient.identify("userId",traits,null);
+            rudderClient.identify(username.getText().toString(),traits,null);
+            rudderClient.track(
+                    "register",
+                    new RudderProperty()
+                            .putValue("email",username.getText().toString())
+            );
             startActivity(intent);
             finish();
         }

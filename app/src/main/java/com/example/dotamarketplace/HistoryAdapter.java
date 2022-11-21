@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 public class HistoryAdapter extends SimpleCursorAdapter {
 
+
     private Context context;
     private int layout;
     private Cursor cursor;

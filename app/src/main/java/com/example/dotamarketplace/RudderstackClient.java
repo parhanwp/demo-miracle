@@ -4,6 +4,7 @@ import com.rudderstack.android.sdk.core.RudderClient;
 import com.rudderstack.android.sdk.core.RudderConfig;
 import com.rudderstack.android.sdk.core.RudderLogger;
 
+
 public class RudderstackClient {
     private static RudderClient rudderClient;
 

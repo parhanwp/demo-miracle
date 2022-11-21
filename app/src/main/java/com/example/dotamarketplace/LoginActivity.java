@@ -65,6 +65,11 @@ public class LoginActivity extends AppCompatActivity {
                             traits.put("firebaseToken",fcm_id);
                             rudderClient.identify(username.getText().toString(),traits,null);
                             preference.saveString("username", username.getText().toString());
+                            rudderClient.track(
+                                    "login",
+                                    new RudderProperty()
+                                            .putValue("email",username.getText().toString())
+                            );
                             startActivity(intent);
                             finish();
                         } else {

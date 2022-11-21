@@ -15,7 +15,7 @@ import com.rudderstack.android.sdk.core.RudderLogger;
 
 public class MyApplication extends Application {
     private static MyApplication myApp;
-    private static RudderClient rudderClient = null;
+    static RudderClient rudderClient = null;
     private static String fcm_token;
 
     public static MyApplication getInstance(){

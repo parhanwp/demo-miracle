@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Miracle Market Place"
+            android:text="Miracle Marketplace"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20dp"
             android:textStyle="bold" />

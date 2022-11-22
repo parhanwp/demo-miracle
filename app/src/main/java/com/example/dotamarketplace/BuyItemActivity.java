@@ -1,6 +1,6 @@
-package com.example.miraclemarketplace;
+package com.example.dotamarketplace;
 
-import static com.example.miraclemarketplace.DatabaseHelper._ID;
+import static com.example.dotamarketplace.DatabaseHelper._ID;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -97,7 +97,6 @@ public class BuyItemActivity extends AppCompatActivity {
                    // dbManager.updateBalance(user.getInt(user.getColumnIndex(_ID)), balance - total);
                     int getPayment = payment_method.getCheckedRadioButtonId();
                     radioButton = findViewById(getPayment);
-                    startActivity(intent);
                     Log.d("log_adam",price.getText().toString());
                     rudderClient.track(
                             "Product_Checkout",
@@ -108,6 +107,7 @@ public class BuyItemActivity extends AppCompatActivity {
                                     .putValue("payment_method",radioButton.getText())
                                     .putValue("stock",stock.getText().toString())
                     );
+                    startActivity(intent);
                 }
             }
         });

@@ -1,4 +1,4 @@
-package com.example.miraclemarketplace;
+package com.example.dotamarketplace;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

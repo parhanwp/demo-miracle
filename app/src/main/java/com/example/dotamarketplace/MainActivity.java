@@ -1,4 +1,4 @@
-package com.example.miraclemarketplace;
+package com.example.dotamarketplace;
 
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;

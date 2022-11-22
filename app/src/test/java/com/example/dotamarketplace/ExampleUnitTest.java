@@ -1,4 +1,4 @@
-package com.example.miraclemarketplace;
+package com.example.dotamarketplace;
 
 import org.junit.Test;
 

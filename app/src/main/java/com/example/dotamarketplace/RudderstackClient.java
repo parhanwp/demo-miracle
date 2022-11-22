@@ -1,4 +1,4 @@
-package com.example.miraclemarketplace;
+package com.example.dotamarketplace;
 
 import com.rudderstack.android.sdk.core.RudderClient;
 import com.rudderstack.android.sdk.core.RudderConfig;

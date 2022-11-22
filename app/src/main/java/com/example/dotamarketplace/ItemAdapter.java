@@ -1,4 +1,4 @@
-package com.example.miraclemarketplace;
+package com.example.dotamarketplace;
 
 
 
@@ -53,10 +53,7 @@ public class ItemAdapter extends SimpleCursorAdapter {
             public void onClick(View v) {
                 int prc = Integer.parseInt(price.getText().toString());
                 int isk = Integer.parseInt(stock.getText().toString());
-                Intent intent = new Intent(context, BuyItemActivity.class);
-                intent.putExtra("id_item", row_id);
                 Log.d("log_adam",stock.getText().toString());
-                context.startActivity(intent);
                 rudderClient.track(
                         "addToCarts",
                         new RudderProperty()
@@ -65,7 +62,10 @@ public class ItemAdapter extends SimpleCursorAdapter {
                                 .putValue("prices", prc)
 
                 );
-
+                Intent intent = new Intent(context, BuyItemActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("id_item", row_id);
+                context.startActivity(intent);
             }
         });
     }

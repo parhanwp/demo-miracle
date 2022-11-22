@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.miraclemarketplace">
+    package="com.example.dotamarketplace">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name="com.example.miraclemarketplace.MyApplication"
+        android:name="com.example.dotamarketplace.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Miracle-Marketplace"
@@ -36,13 +36,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCgQRuxX1Mf2epk0XqUisZnRlSZbArjlWk" />
 
-        <activity android:name="com.example.miraclemarketplace.LocationActivity"/>
-        <activity android:name="com.example.miraclemarketplace.HistoryActivity" />
-        <activity android:name="com.example.miraclemarketplace.RegisterActivity" />
-        <activity android:name="com.example.miraclemarketplace.MainActivity" />
-        <activity android:name="com.example.miraclemarketplace.BuyItemActivity" />
-        <activity android:name="com.example.miraclemarketplace.LoginActivity" />
-        <activity android:name="com.example.miraclemarketplace.Splashscreen"
+        <activity android:name="com.example.dotamarketplace.LocationActivity"/>
+        <activity android:name="com.example.dotamarketplace.HistoryActivity" />
+        <activity android:name="com.example.dotamarketplace.RegisterActivity" />
+        <activity android:name="com.example.dotamarketplace.MainActivity" />
+        <activity android:name="com.example.dotamarketplace.BuyItemActivity" />
+        <activity android:name="com.example.dotamarketplace.LoginActivity" />
+        <activity android:name="com.example.dotamarketplace.Splashscreen"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="true">
             <intent-filter>
@@ -52,7 +52,7 @@
         </activity>
 
         <receiver
-            android:name="com.example.miraclemarketplace.SMSReceiver"
+            android:name="com.example.dotamarketplace.SMSReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="999">
